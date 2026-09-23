@@ -17,7 +17,7 @@ function Footer() {
   const [message, setMessage] = useState("");
 
 
-  const whatsappNumber = "2349029207127";
+  const whatsappNumber = "2349029207126";
 
   const email = "Salamieniola588@gmail.com";
 
@@ -296,7 +296,7 @@ function Footer() {
               </h3>
 
               <div className="mt-5 space-y-4 text-sm">
-                <p>Lagos, Nigeria</p>
+                <p>Ibeju/Lekki, Lagos, Nigeria</p>
 
                 <a
                   href={`https://wa.me/${whatsappNumber}`}
@@ -304,7 +304,7 @@ function Footer() {
                   rel="noopener noreferrer"
                   className="block transition-colors duration-300 hover:text-[#C88A00]"
                 >
-                  0902 920 7127
+                  0902 920 7126
                 </a>
 
                 <a

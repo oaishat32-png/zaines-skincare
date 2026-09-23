@@ -22,12 +22,12 @@ const reviews: Review[] = [
   {
     image: J,
     review:
-      "I've tried different skincare products before, but I decided to stick with these because I actually enjoy using them. My skin feels smoother and more moisturized now.",
+      "What I really like about Zainie Skincare is how the products feel on my skin. They don't feel too heavy, and my skin has been looking healthier since I started using them.",
   },
   {
     image: B,
     review:
-      "What I really like about Zainie Skincare is how the products feel on my skin. They don't feel too heavy, and my skin has been looking healthier since I started using them.",
+      "I've tried different skincare products before, but I decided to stick with these because I actually enjoy using them. My skin feels smoother and more moisturized now.",
   },
   {
     image: F,
@@ -47,7 +47,7 @@ const reviews: Review[] = [
   {
     image: O,
     review:
-      "The body wash has become one of my favorites. It leaves my skin feeling clean without that dry feeling I sometimes get from other products.",
+      "I really like the glow my skin has gotten since I started paying more attention to my skincare routine. The products have been a nice addition, and I'll definitely keep using them.",
   },
   {
     image: M,
@@ -57,7 +57,7 @@ const reviews: Review[] = [
   {
     image: G,
     review:
-      "I really like the glow my skin has gotten since I started paying more attention to my skincare routine. The products have been a nice addition, and I'll definitely keep using them.",
+      "The body wash has become one of my favorites. It leaves my skin feeling clean without that dry feeling I sometimes get from other products.",
   },
   {
     image: E,

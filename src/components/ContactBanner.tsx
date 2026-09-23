@@ -1,22 +1,18 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ContactBanner: React.FC = () => {
-  const handleContactClick = () => {
-    const contactSection = document.getElementById("contact");
+  const navigate = useNavigate();
 
-    if (contactSection) {
-      contactSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    } else {
-      window.location.href = "/contact";
-    }
+  const handleContactClick = () => {
+    navigate("/contact");
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#EAA900] px-6 py-20 md:px-12 lg:px-16 lg:py-24">
+    <section
+      className="relative w-full overflow-hidden bg-[#EAA900] px-6 py-20 md:px-12 lg:px-16 lg:py-24"
+    >
       {/* Light cream layer */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#F5C542]/80 via-[#EAA900] to-[#C88A00]" />
 
