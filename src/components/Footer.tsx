@@ -296,7 +296,7 @@ function Footer() {
               </h3>
 
               <div className="mt-5 space-y-4 text-sm">
-                <p>Ibeju/Lekki, Lagos, Nigeria</p>
+                <p>Lagos, Nigeria</p>
 
                 <a
                   href={`https://wa.me/${whatsappNumber}`}

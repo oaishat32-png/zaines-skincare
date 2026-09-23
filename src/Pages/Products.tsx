@@ -20,6 +20,11 @@ import exfoliating from "../assets/exfoliating.jpeg";
 import Tumeric from "../assets/Tumeric.jpeg";
 import Pack from "../assets/Pack.jpeg";
 import Facial from "../assets/Facial.jpeg";
+import Pimples from "../assets/Pimples.jpeg";
+import facecream from "../assets/facecream.jpeg";
+import Facesoap from "../assets/Facesoap.jpeg";
+
+
 
 interface Product {
   id: string;
@@ -31,10 +36,10 @@ interface Product {
 const formatNaira = (amount: number) => `₦${amount.toLocaleString()}`;
 
 const products: Product[] = [
-  { id: "Combo", name: "Combo", price: 54000, image: Eight },
+  { id: "Combo", name: "Yellow tone full set", price: 54000, image: Eight },
   {
     id: "karat-gold-face-cream",
-    name: "Karat Gold Face Cream",
+    name: "24karat gold face wash",
     price: 6000,
     image: karatgold,
   },
@@ -46,11 +51,11 @@ const products: Product[] = [
   },
   {
     id: "yellow-tone-face-cream",
-    name: "Yellow Tone Face Cream",
+    name: "Yellow tone body milk",
     price: 16000,
     image: yellowtone,
   },
-  { id: "three combo", name: "Three Combo", price: 16000, image: three },
+  { id: "three combo", name: "No cream needed set", price: 16000, image: three },
   {
     id: "snow-whitening-soap",
     name: "Snow Whitening Soap",
@@ -63,18 +68,18 @@ const products: Product[] = [
     price: 16000,
     image: Bodymilk,
   },
-  { id: "even-tone", name: "Even Tone", price: 5000, image: Eventone },
-  { id: "five combo", name: "Five Combo", price: 28000, image: Five },
+  { id: "even-tone", name: "Even tone whitening cleanser", price: 5000, image: Eventone },
+  { id: "five combo", name: "Yellow tone mini kit", price: 28000, image: Five },
   { id: "pink-lips", name: "Pink Lips balm", price: 3000, image: pinklip },
   {
     id: "pimples-eradicate",
-    name: "Pimples Eradicate",
+    name: "Pimples eradicating set",
     price: 6000,
     image: Pimpleseradicate,
   },
-  { id: "four", name: "Four", price: 25000, image: Four },
+  { id: "four", name: "Face lightly set", price: 25000, image: Four },
   { id: "soap", name: "Face redness mask", price: 3500, image: soap },
-  { id: "glow-oil", name: "Glow Oil", price: 6000, image: Glowoil },
+  { id: "glow-oil", name: "Yellow tone glow oil", price: 6000, image: Glowoil },
   {
     id: "exfoliating-scrub",
     name: "Exfoliating Scrub",
@@ -83,17 +88,37 @@ const products: Product[] = [
   },
   {
     id: "turmeric-face-cream",
-    name: "Turmeric Face Cream",
+    name: "Tumeric brightening scrub",
     price: 5000,
     image: Tumeric,
   },
-  { id: "pack", name: "Pack", price: 17000, image: Pack },
+  { id: "pack", name: "Pimples eradicating set", price: 17000, image: Pack },
   {
     id: "facial-scrub",
     name: "Facial Scrub",
     price: 4000,
     image: Facial,
   },
+  {
+    id: "face-soap",
+    name: "Brighting face soap",
+    price: 3500,
+    image: Facesoap,
+  },
+  {
+    id: "pimples-face-soap",
+    name: "Pimples face soap",
+    price: 6000,
+    image: Pimples,
+  },
+
+{
+    id: "yellow-tone-face-cream",
+    name: "Yellow tone face cream",
+    price: 7000,
+    image: facecream,
+  },
+  
 ];
 
 const Products: React.FC = () => {

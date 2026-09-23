@@ -4,7 +4,7 @@ import { ArrowLeft, MapPin, Clock, ClipboardList, ShieldCheck } from "lucide-rea
 import { useCart } from "../context/CartContext";
 
 const formatNaira = (amount: number) => `₦${amount.toLocaleString()}`;
-const DELIVERY_FEE = 2000;
+const DELIVERY_FEE = 5000;
 
 const BUSINESS_WHATSAPP_NUMBER = "2349029207126";
 const BUSINESS_NAME = "ZAINIESKINCARE";
