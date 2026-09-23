@@ -7,11 +7,7 @@ import {
   CheckCheck,
 } from "lucide-react";
 
-import {
-  FaInstagram,
-  FaTiktok,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 
 import LOGO from "../assets/LOGO.jpg";
 
@@ -20,18 +16,21 @@ function Footer() {
   const [showChat, setShowChat] = useState(false);
   const [message, setMessage] = useState("");
 
-  const whatsappNumber = "2349029207126";
-  const email = "your-email@example.com";
+
+  const whatsappNumber = "2349029207127";
+
+  const email = "Salamieniola588@gmail.com";
 
   const currentYear = new Date().getFullYear();
 
-  // Current time
   const chatTime = new Date().toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
   });
 
-  // Show back-to-top button when user scrolls down
+  // =====================================================
+  // SHOW BACK-TO-TOP BUTTON WHEN SCROLLING
+  // =====================================================
   useEffect(() => {
     const handleScroll = () => {
       setShowBackToTop(window.scrollY > 400);
@@ -44,7 +43,9 @@ function Footer() {
     };
   }, []);
 
-  // Scroll smoothly to top
+  // =====================================================
+  // SCROLL TO TOP
+  // =====================================================
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -52,16 +53,33 @@ function Footer() {
     });
   };
 
-  // Send WhatsApp message
-  const handleSend = () => {
-    const text = message.trim() ||
-      "Hello! I would like to inquire about your skincare products.";
+  // =====================================================
+  // OPEN WHATSAPP
+  // =====================================================
+  const handleWhatsApp = () => {
+    const text =
+      "Hello ZAINIESKINCARE, I would like to make an enquiry about your skincare products.";
 
-    window.open(
-      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`,
-      "_blank",
-      "noopener,noreferrer"
-    );
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      text
+    )}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  };
+
+  // =====================================================
+  // SEND CHAT MESSAGE TO WHATSAPP
+  // =====================================================
+  const handleSend = () => {
+    const text = message.trim();
+
+    if (!text) return;
+
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      `Hello ZAINIESKINCARE, ${text}`
+    )}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 
     setMessage("");
   };
@@ -69,29 +87,29 @@ function Footer() {
   return (
     <>
       {/* =====================================================
-                FOOTER
-            ===================================================== */}
+          FOOTER
+      ===================================================== */}
       <footer className="relative overflow-hidden bg-[#FFF9E8] px-6 pb-6 pt-14 text-[#625D55] md:px-10 lg:px-16 lg:pt-20">
-
         {/* Ambient gold glow */}
         <div className="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-[#EAA900]/10 blur-[110px]" />
 
         <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-[#F5C542]/10 blur-[120px]" />
 
         <div className="relative mx-auto max-w-7xl">
-
           {/* =====================================================
-                MAIN FOOTER
-            ===================================================== */}
+              MAIN FOOTER
+          ===================================================== */}
           <div className="grid gap-12 border-b border-[#E8D9B8] pb-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
-
-            {/* BRAND */}
+            {/* =====================================================
+                BRAND
+            ===================================================== */}
             <div>
               <div className="flex items-center gap-3">
                 <img
                   src={LOGO}
                   alt="ZAINIESKINCARE Logo"
-                  className="h-12 w-12 rounded-xl object-contain" />
+                  className="h-12 w-12 rounded-xl object-contain"
+                />
 
                 <span className="text-xl font-bold uppercase tracking-tight text-[#C88A00]">
                   Zainieskincare
@@ -105,7 +123,6 @@ function Footer() {
 
               {/* Social Icons */}
               <div className="mt-6 flex items-center gap-3">
-
                 {/* Instagram */}
                 <a
                   href="https://www.instagram.com/Zainie_skincare/"
@@ -117,9 +134,19 @@ function Footer() {
                   <FaInstagram className="h-5 w-5" />
                 </a>
 
+                {/* WhatsApp */}
+                <button
+                  type="button"
+                  onClick={handleWhatsApp}
+                  aria-label="WhatsApp"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#E8D9B8] bg-white text-[#1D1914] transition-all duration-300 hover:-translate-y-1 hover:border-[#EAA900] hover:bg-[#EAA900]"
+                >
+                  <FaWhatsapp className="h-5 w-5" />
+                </button>
+
                 {/* TikTok */}
                 <a
-                  href="https://www.tiktok.com/"
+                  href="https://www.tiktok.com/zaines_skincare"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="TikTok"
@@ -136,18 +163,18 @@ function Footer() {
                 >
                   <Mail className="h-4 w-4" />
                 </a>
-
               </div>
             </div>
 
-            {/* COMPANY */}
+            {/* =====================================================
+                COMPANY
+            ===================================================== */}
             <div>
               <h3 className="text-lg font-semibold text-[#1D1914]">
                 Company
               </h3>
 
               <ul className="mt-5 space-y-3 text-sm">
-
                 <li>
                   <a
                     href="#about"
@@ -201,18 +228,18 @@ function Footer() {
                     Contact Us
                   </a>
                 </li>
-
               </ul>
             </div>
 
-            {/* POPULAR CATEGORIES */}
+            {/* =====================================================
+                POPULAR CATEGORIES
+            ===================================================== */}
             <div>
               <h3 className="text-lg font-semibold text-[#1D1914]">
                 Popular Categories
               </h3>
 
               <ul className="mt-5 space-y-3 text-sm">
-
                 <li>
                   <a
                     href="/products"
@@ -257,18 +284,18 @@ function Footer() {
                     Whitening Products
                   </a>
                 </li>
-
               </ul>
             </div>
 
-            {/* CONTACT */}
+            {/* =====================================================
+                CONTACT
+            ===================================================== */}
             <div>
               <h3 className="text-lg font-semibold text-[#1D1914]">
                 Contact Us
               </h3>
 
               <div className="mt-5 space-y-4 text-sm">
-
                 <p>Lagos, Nigeria</p>
 
                 <a
@@ -277,7 +304,7 @@ function Footer() {
                   rel="noopener noreferrer"
                   className="block transition-colors duration-300 hover:text-[#C88A00]"
                 >
-                  0902 920 7126
+                  0902 920 7127
                 </a>
 
                 <a
@@ -286,48 +313,41 @@ function Footer() {
                 >
                   {email}
                 </a>
-
               </div>
             </div>
-
           </div>
 
           {/* =====================================================
-                BOTTOM FOOTER
-            ===================================================== */}
+              BOTTOM FOOTER
+          ===================================================== */}
           <div className="flex flex-col gap-4 pt-6 text-xs text-[#81796D] sm:flex-row sm:items-center sm:justify-between">
-            <p>
-              © {currentYear} ZAINIESKINCARE. All rights reserved.
-            </p>
+            <p>© {currentYear} ZAINIESKINCARE. All rights reserved.</p>
 
             <p>Skincare made simple.</p>
           </div>
-
         </div>
       </footer>
 
       {/* =====================================================
-                WHATSAPP FLOATING WIDGET
-            ===================================================== */}
+          WHATSAPP FLOATING WIDGET
+      ===================================================== */}
       <div className="fixed bottom-6 right-6 z-[9990]">
-
-        {/* WhatsApp Chat Box */}
+        {/* =====================================================
+            WHATSAPP CHAT BOX
+        ===================================================== */}
         {showChat && (
           <div className="absolute bottom-20 right-0 w-72 overflow-hidden rounded-2xl border border-[#e5ddc8] bg-[#f4f1ea] shadow-2xl animate-[fadeIn_0.2s_ease-out]">
-
             {/* Header */}
             <div className="flex items-start justify-between gap-3 bg-[#075E54] px-4 py-3">
-
               <div className="flex items-center gap-3">
                 <div className="relative">
-
                   <img
                     src={LOGO}
                     alt="ZAINIESKINCARE"
-                    className="h-11 w-11 rounded-full object-cover ring-2 ring-white/20" />
+                    className="h-11 w-11 rounded-full object-cover ring-2 ring-white/20"
+                  />
 
                   <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-[#075E54] bg-[#25D366]" />
-
                 </div>
 
                 <div>
@@ -350,7 +370,6 @@ function Footer() {
               >
                 <X className="h-5 w-5" />
               </button>
-
             </div>
 
             {/* Chat Body */}
@@ -358,19 +377,18 @@ function Footer() {
               className="space-y-3 px-3 py-4"
               style={{
                 backgroundColor: "#e9e3d3",
-                backgroundImage: "radial-gradient(#d8cfb3 0.6px, transparent 0.6px)",
+                backgroundImage:
+                  "radial-gradient(#d8cfb3 0.6px, transparent 0.6px)",
                 backgroundSize: "14px 14px",
               }}
             >
-
               <div className="max-w-[85%] rounded-2xl rounded-tl-sm bg-white px-3 py-2 shadow-sm">
-
                 <p className="text-xs font-semibold text-[#075E54]">
                   Zainieskincare
                 </p>
 
                 <p className="mt-1 text-sm leading-5 text-[#1D1914]">
-                  Hi, welcome to Zainieskincare, how can we help you today 🙂
+                  Hi, welcome to Zainieskincare, how can we help you today 
                 </p>
 
                 <div className="mt-1 flex items-center justify-end gap-1 text-[10px] text-gray-400">
@@ -378,14 +396,11 @@ function Footer() {
 
                   <CheckCheck className="h-3.5 w-3.5 text-[#53bdeb]" />
                 </div>
-
               </div>
-
             </div>
 
             {/* Input Row */}
             <div className="flex items-center gap-2 border-t border-[#e0d8c0] bg-[#f4f1ea] px-3 py-2.5">
-
               <input
                 type="text"
                 value={message}
@@ -394,9 +409,10 @@ function Footer() {
                   if (e.key === "Enter") {
                     handleSend();
                   }
-                } }
-                placeholder="Type a message.."
-                className="flex-1 rounded-full border border-[#e0d8c0] bg-white px-4 py-2 text-sm text-[#1D1914] outline-none placeholder:text-gray-400 focus:border-[#EAA900]" />
+                }}
+                placeholder="Type a message..."
+                className="flex-1 rounded-full border border-[#e0d8c0] bg-white px-4 py-2 text-sm text-[#1D1914] outline-none placeholder:text-gray-400 focus:border-[#EAA900]"
+              />
 
               <button
                 type="button"
@@ -406,17 +422,14 @@ function Footer() {
               >
                 <ArrowUpRight className="h-4 w-4" />
               </button>
-
             </div>
-
           </div>
         )}
 
         {/* =====================================================
-                FLOATING WHATSAPP BUTTON
-            ===================================================== */}
+            FLOATING WHATSAPP BUTTON
+        ===================================================== */}
         <div className="relative flex h-14 w-14 items-center justify-center">
-
           {!showChat && (
             <>
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#EAA900] opacity-40" />
@@ -437,14 +450,12 @@ function Footer() {
               <FaWhatsapp className="h-6 w-6" />
             )}
           </button>
-
         </div>
-
       </div>
 
       {/* =====================================================
-                BACK TO TOP BUTTON
-            ===================================================== */}
+          BACK TO TOP BUTTON
+      ===================================================== */}
       {showBackToTop && (
         <button
           type="button"
@@ -457,8 +468,8 @@ function Footer() {
       )}
 
       {/* =====================================================
-                FOOTER ANIMATIONS
-            ===================================================== */}
+          FOOTER ANIMATIONS
+      ===================================================== */}
       <style>
         {`
           @keyframes fadeIn {

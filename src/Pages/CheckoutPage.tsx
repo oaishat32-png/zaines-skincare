@@ -6,10 +6,8 @@ import { useCart } from "../context/CartContext";
 const formatNaira = (amount: number) => `₦${amount.toLocaleString()}`;
 const DELIVERY_FEE = 2000;
 
-// Replace with the business's actual WhatsApp number, in international
-// format WITHOUT the leading + or any spaces/dashes, e.g. "2348035672651"
-const BUSINESS_WHATSAPP_NUMBER = "2348035672651";
-const BUSINESS_NAME = "Krave by Ari";
+const BUSINESS_WHATSAPP_NUMBER = "2349029207126";
+const BUSINESS_NAME = "ZAINIESKINCARE";
 
 const CheckoutPage: React.FC = () => {
   const { items, subtotal, clearCart } = useCart();
@@ -57,15 +55,15 @@ const CheckoutPage: React.FC = () => {
       .join("\n");
 
     const deliveryTypeLabel =
-      deliveryType === "delivery" ? "🚚 Doorstep Delivery" : "🏬 Store Pickup";
+      deliveryType === "delivery" ? " Doorstep Delivery" : " Store Pickup";
 
     const deliveryTimeLabel =
       deliveryTime === "asap"
-        ? "⚡ As Soon As Possible (Same-Day Express Dispatch)"
-        : "🗓️ Scheduled for later";
+        ? " As Soon As Possible (Same-Day Express Dispatch)"
+        : " Scheduled for later";
 
     const lines = [
-      `📦 *New Order Checkout — ${BUSINESS_NAME}*`,
+      ` *New Order Checkout — ${BUSINESS_NAME}*`,
       "",
       `*Order Type:* ${deliveryTypeLabel}`,
       `*Customer Name:* ${form.fullName}`,
@@ -98,21 +96,19 @@ const CheckoutPage: React.FC = () => {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${BUSINESS_WHATSAPP_NUMBER}?text=${encodedMessage}`;
 
-    // Open WhatsApp with the pre-filled order message
+  
     window.open(whatsappUrl, "_blank");
 
-    // Clear the cart and send the user back home once they've been
-    // handed off to WhatsApp to complete the order there.
     clearCart();
     navigate("/");
   };
 
   if (items.length === 0) {
     return (
-      <main className="flex min-h-screen items-center justify-center bg-pink-50 px-6 text-center">
+      <main className="flex min-h-screen items-center justify-center bg-yellow-50 px-6 text-center">
         <div>
           <p className="text-gray-500">Your cart is empty.</p>
-          <Link to="/menu" className="mt-3 inline-block font-semibold text-pink-600">
+          <Link to="/products" className="mt-3 inline-block font-semibold text-yellow-600">
             Browse the menu
           </Link>
         </div>
@@ -121,7 +117,7 @@ const CheckoutPage: React.FC = () => {
   }
 
   return (
-    <main className="min-h-screen bg-pink-50 px-4 py-8 sm:px-6">
+    <main className="min-h-screen bg-yellow-50 px-4 py-8 sm:px-6">
       <div className="mx-auto max-w-md rounded-3xl bg-white p-6 shadow-sm">
 
         {/* Header */}
@@ -134,15 +130,15 @@ const CheckoutPage: React.FC = () => {
             <ArrowLeft className="h-5 w-5 text-gray-700" />
           </button>
           <h1 className="font-serif text-xl text-gray-900">Checkout</h1>
-          <Link to="/menu" className="text-sm font-semibold text-pink-600">
-            + Menu
+          <Link to="/products" className="text-sm font-semibold text-yellow-600">
+            + Products
           </Link>
         </div>
 
         {/* Step indicator */}
         <div className="mb-6 flex items-center justify-center gap-2 text-xs">
-          <span className="flex items-center gap-1 font-semibold text-pink-600">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-pink-600 text-white">1</span>
+          <span className="flex items-center gap-1 font-semibold text-yellow-600">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-yellow-600 text-white">1</span>
             Delivery
           </span>
           <span className="h-px w-8 bg-gray-200" />
@@ -160,7 +156,7 @@ const CheckoutPage: React.FC = () => {
         {/* Delivery Information */}
         <section className="mb-5 rounded-2xl border border-gray-100 p-4">
           <h2 className="mb-3 flex items-center gap-2 text-sm font-bold text-gray-900">
-            <MapPin className="h-4 w-4 text-pink-600" /> Delivery Information
+            <MapPin className="h-4 w-4 text-yellow-600" /> Delivery Information
           </h2>
 
           <div className="mb-4 flex rounded-full bg-gray-50 p-1">
@@ -168,21 +164,21 @@ const CheckoutPage: React.FC = () => {
               onClick={() => setDeliveryType("delivery")}
               className={`flex-1 rounded-full py-2 text-xs font-semibold transition ${
                 deliveryType === "delivery"
-                  ? "bg-white text-pink-600 shadow-sm"
+                  ? "bg-white text-yellow-600 shadow-sm"
                   : "text-gray-400"
               }`}
             >
-              🛵 Delivery
+               Delivery
             </button>
             <button
               onClick={() => setDeliveryType("pickup")}
               className={`flex-1 rounded-full py-2 text-xs font-semibold transition ${
                 deliveryType === "pickup"
-                  ? "bg-white text-pink-600 shadow-sm"
+                  ? "bg-white text-yellow-600 shadow-sm"
                   : "text-gray-400"
               }`}
             >
-              🏬 Pickup
+               Pickup
             </button>
           </div>
 
@@ -197,7 +193,7 @@ const CheckoutPage: React.FC = () => {
                 value={form.fullName}
                 onChange={handleChange}
                 placeholder="e.g. Chioma Adebayo"
-                className={`w-full rounded-lg border px-3 py-2 text-sm outline-none focus:border-pink-500 ${
+                className={`w-full rounded-lg border px-3 py-2 text-sm outline-none focus:border-yellow-500 ${
                   errors.fullName ? "border-red-400" : "border-gray-200"
                 }`}
               />
@@ -213,7 +209,7 @@ const CheckoutPage: React.FC = () => {
                 value={form.phone}
                 onChange={handleChange}
                 placeholder="e.g. 0812 345 6789"
-                className={`w-full rounded-lg border px-3 py-2 text-sm outline-none focus:border-pink-500 ${
+                className={`w-full rounded-lg border px-3 py-2 text-sm outline-none focus:border-yellow-500 ${
                   errors.phone ? "border-red-400" : "border-gray-200"
                 }`}
               />
@@ -230,7 +226,7 @@ const CheckoutPage: React.FC = () => {
                   value={form.address}
                   onChange={handleChange}
                   placeholder="e.g. 14 Admiralty Way, Lekki Phase 1"
-                  className={`w-full rounded-lg border px-3 py-2 text-sm outline-none focus:border-pink-500 ${
+                  className={`w-full rounded-lg border px-3 py-2 text-sm outline-none focus:border-yellow-500 ${
                     errors.address ? "border-red-400" : "border-gray-200"
                   }`}
                 />
@@ -247,7 +243,7 @@ const CheckoutPage: React.FC = () => {
                 onChange={handleChange}
                 rows={2}
                 placeholder="e.g. Extra syrup, call when at gate..."
-                className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-pink-500"
+                className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none focus:border-yellow-500"
               />
             </div>
           </div>
@@ -256,21 +252,21 @@ const CheckoutPage: React.FC = () => {
         {/* Delivery Time */}
         <section className="mb-5 rounded-2xl border border-gray-100 p-4">
           <h2 className="mb-3 flex items-center gap-2 text-sm font-bold text-gray-900">
-            <Clock className="h-4 w-4 text-pink-600" /> Delivery Time
+            <Clock className="h-4 w-4 text-yellow-600" /> Delivery Time
           </h2>
 
           <button
             onClick={() => setDeliveryTime("asap")}
             className={`mb-2 flex w-full items-center gap-3 rounded-xl border-2 p-3 text-left transition ${
               deliveryTime === "asap"
-                ? "border-pink-500 bg-pink-50"
+                ? "border-yellow-500 bg-yellow-50"
                 : "border-gray-100"
             }`}
           >
             <span
               className={`h-4 w-4 rounded-full border-2 ${
                 deliveryTime === "asap"
-                  ? "border-pink-500 bg-pink-500"
+                  ? "border-yellow-500 bg-yellow-500"
                   : "border-gray-300"
               }`}
             />
@@ -278,7 +274,7 @@ const CheckoutPage: React.FC = () => {
               <span className="block text-sm font-semibold text-gray-900">
                 As soon as possible
               </span>
-              <span className="text-xs text-pink-500">⚡ Express Dispatch</span>
+              <span className="text-xs text-yellow-500"> Express Dispatch</span>
             </span>
           </button>
 
@@ -286,14 +282,14 @@ const CheckoutPage: React.FC = () => {
             onClick={() => setDeliveryTime("later")}
             className={`flex w-full items-center gap-3 rounded-xl border-2 p-3 text-left transition ${
               deliveryTime === "later"
-                ? "border-pink-500 bg-pink-50"
+                ? "border-yellow-500 bg-yellow-50"
                 : "border-gray-100"
             }`}
           >
             <span
               className={`h-4 w-4 rounded-full border-2 ${
                 deliveryTime === "later"
-                  ? "border-pink-500 bg-pink-500"
+                  ? "border-yellow-500 bg-yellow-500"
                   : "border-gray-300"
               }`}
             />
@@ -309,7 +305,7 @@ const CheckoutPage: React.FC = () => {
         {/* Order Summary */}
         <section className="mb-5 rounded-2xl border border-gray-100 p-4">
           <h2 className="mb-3 flex items-center gap-2 text-sm font-bold text-gray-900">
-            <ClipboardList className="h-4 w-4 text-pink-600" /> Order Summary
+            <ClipboardList className="h-4 w-4 text-yellow-600" /> Order Summary
           </h2>
 
           <div className="space-y-1 text-xs text-gray-500">
@@ -336,7 +332,7 @@ const CheckoutPage: React.FC = () => {
 
           <div className="mt-3 flex justify-between border-t border-gray-100 pt-3">
             <span className="font-bold text-gray-900">Total</span>
-            <span className="font-bold text-pink-600">{formatNaira(total)}</span>
+            <span className="font-bold text-yellow-600">{formatNaira(total)}</span>
           </div>
         </section>
 
@@ -347,7 +343,7 @@ const CheckoutPage: React.FC = () => {
 
         <button
           onClick={handleContinue}
-          className="flex w-full items-center justify-center gap-2 rounded-full bg-pink-600 py-4 text-sm font-semibold text-white transition hover:bg-pink-700"
+          className="flex w-full items-center justify-center gap-2 rounded-full bg-yellow-600 py-4 text-sm font-semibold text-white transition hover:bg-yellow-700"
         >
           Continue to Payment ({formatNaira(total)}) →
         </button>
