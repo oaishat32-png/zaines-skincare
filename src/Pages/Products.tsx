@@ -23,6 +23,10 @@ import Facial from "../assets/Facial.jpeg";
 import Pimples from "../assets/Pimples.jpeg";
 import facecream from "../assets/facecream.jpeg";
 import Facesoap from "../assets/Facesoap.jpeg";
+import Knuckles from "../assets/Knuckles.jpeg";
+import Repairsoap from "../assets/Repairsoap.jpeg";
+import facecleanser from "../assets/facecleanser.jpeg";
+import serum from "../assets/serum.jpeg";
 
 
 
@@ -77,7 +81,7 @@ const products: Product[] = [
     price: 6000,
     image: Pimpleseradicate,
   },
-  { id: "four", name: "Face lightly set", price: 25000, image: Four },
+  { id: "four", name: "Face whitening set", price: 25000, image: Four },
   { id: "soap", name: "Face redness mask", price: 3500, image: soap },
   { id: "glow-oil", name: "Yellow tone glow oil", price: 6000, image: Glowoil },
   {
@@ -117,6 +121,31 @@ const products: Product[] = [
     name: "Yellow tone face cream",
     price: 7000,
     image: facecream,
+  },
+
+  {
+    id: "Knuckles eraser",
+    name: "Knuckles eraser",
+    price: 18000,
+    image: Knuckles,
+  },
+  {
+    id: "Repair soap",
+    name: "Repair soap",
+    price: 4000,
+    image: Repairsoap,
+  },
+  {
+    id: "Lighting face cleanser",
+    name: "Lighting face cleanser",
+    price: 5000,
+    image: facecleanser,
+  },
+  {
+    id: "Vit -C face serum",
+    name: "Vit -C face serum",
+    price: 6000,
+    image: serum,
   },
   
 ];

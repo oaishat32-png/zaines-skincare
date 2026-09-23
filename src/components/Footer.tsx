@@ -9,7 +9,7 @@ import {
 
 import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 
-import LOGO from "../assets/LOGO.jpg";
+import New from "../assets/New.jpeg";
 
 function Footer() {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -106,7 +106,7 @@ function Footer() {
             <div>
               <div className="flex items-center gap-3">
                 <img
-                  src={LOGO}
+                  src={New}
                   alt="ZAINIESKINCARE Logo"
                   className="h-12 w-12 rounded-xl object-contain"
                 />
@@ -281,7 +281,15 @@ function Footer() {
                     href="/products"
                     className="transition-colors duration-300 hover:text-[#C88A00]"
                   >
-                    Whitening Products
+                Body lotions
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/products"
+                    className="transition-colors duration-300 hover:text-[#C88A00]"
+                  >
+                Body repair set
                   </a>
                 </li>
               </ul>
@@ -342,7 +350,7 @@ function Footer() {
               <div className="flex items-center gap-3">
                 <div className="relative">
                   <img
-                    src={LOGO}
+                    src={New}
                     alt="ZAINIESKINCARE"
                     className="h-11 w-11 rounded-full object-cover ring-2 ring-white/20"
                   />
