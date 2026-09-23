@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Mail,
   ArrowUpRight,
@@ -13,9 +13,9 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-import LOGO from "../assets/LOGO.jpeg";
+import LOGO from "../assets/LOGO.jpg";
 
-const Footer: React.FC = () => {
+function Footer() {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [showChat, setShowChat] = useState(false);
   const [message, setMessage] = useState("");
@@ -54,8 +54,7 @@ const Footer: React.FC = () => {
 
   // Send WhatsApp message
   const handleSend = () => {
-    const text =
-      message.trim() ||
+    const text = message.trim() ||
       "Hello! I would like to inquire about your skincare products.";
 
     window.open(
@@ -70,8 +69,8 @@ const Footer: React.FC = () => {
   return (
     <>
       {/* =====================================================
-          FOOTER
-      ===================================================== */}
+                FOOTER
+            ===================================================== */}
       <footer className="relative overflow-hidden bg-[#FFF9E8] px-6 pb-6 pt-14 text-[#625D55] md:px-10 lg:px-16 lg:pt-20">
 
         {/* Ambient gold glow */}
@@ -82,8 +81,8 @@ const Footer: React.FC = () => {
         <div className="relative mx-auto max-w-7xl">
 
           {/* =====================================================
-              MAIN FOOTER
-          ===================================================== */}
+                MAIN FOOTER
+            ===================================================== */}
           <div className="grid gap-12 border-b border-[#E8D9B8] pb-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
 
             {/* BRAND */}
@@ -92,8 +91,7 @@ const Footer: React.FC = () => {
                 <img
                   src={LOGO}
                   alt="ZAINIESKINCARE Logo"
-                  className="h-12 w-12 rounded-xl object-contain"
-                />
+                  className="h-12 w-12 rounded-xl object-contain" />
 
                 <span className="text-xl font-bold uppercase tracking-tight text-[#C88A00]">
                   Zainieskincare
@@ -295,8 +293,8 @@ const Footer: React.FC = () => {
           </div>
 
           {/* =====================================================
-              BOTTOM FOOTER
-          ===================================================== */}
+                BOTTOM FOOTER
+            ===================================================== */}
           <div className="flex flex-col gap-4 pt-6 text-xs text-[#81796D] sm:flex-row sm:items-center sm:justify-between">
             <p>
               © {currentYear} ZAINIESKINCARE. All rights reserved.
@@ -309,8 +307,8 @@ const Footer: React.FC = () => {
       </footer>
 
       {/* =====================================================
-          WHATSAPP FLOATING WIDGET
-      ===================================================== */}
+                WHATSAPP FLOATING WIDGET
+            ===================================================== */}
       <div className="fixed bottom-6 right-6 z-[9990]">
 
         {/* WhatsApp Chat Box */}
@@ -326,8 +324,7 @@ const Footer: React.FC = () => {
                   <img
                     src={LOGO}
                     alt="ZAINIESKINCARE"
-                    className="h-11 w-11 rounded-full object-cover ring-2 ring-white/20"
-                  />
+                    className="h-11 w-11 rounded-full object-cover ring-2 ring-white/20" />
 
                   <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-[#075E54] bg-[#25D366]" />
 
@@ -361,8 +358,7 @@ const Footer: React.FC = () => {
               className="space-y-3 px-3 py-4"
               style={{
                 backgroundColor: "#e9e3d3",
-                backgroundImage:
-                  "radial-gradient(#d8cfb3 0.6px, transparent 0.6px)",
+                backgroundImage: "radial-gradient(#d8cfb3 0.6px, transparent 0.6px)",
                 backgroundSize: "14px 14px",
               }}
             >
@@ -398,10 +394,9 @@ const Footer: React.FC = () => {
                   if (e.key === "Enter") {
                     handleSend();
                   }
-                }}
+                } }
                 placeholder="Type a message.."
-                className="flex-1 rounded-full border border-[#e0d8c0] bg-white px-4 py-2 text-sm text-[#1D1914] outline-none placeholder:text-gray-400 focus:border-[#EAA900]"
-              />
+                className="flex-1 rounded-full border border-[#e0d8c0] bg-white px-4 py-2 text-sm text-[#1D1914] outline-none placeholder:text-gray-400 focus:border-[#EAA900]" />
 
               <button
                 type="button"
@@ -418,8 +413,8 @@ const Footer: React.FC = () => {
         )}
 
         {/* =====================================================
-            FLOATING WHATSAPP BUTTON
-        ===================================================== */}
+                FLOATING WHATSAPP BUTTON
+            ===================================================== */}
         <div className="relative flex h-14 w-14 items-center justify-center">
 
           {!showChat && (
@@ -448,8 +443,8 @@ const Footer: React.FC = () => {
       </div>
 
       {/* =====================================================
-          BACK TO TOP BUTTON
-      ===================================================== */}
+                BACK TO TOP BUTTON
+            ===================================================== */}
       {showBackToTop && (
         <button
           type="button"
@@ -462,8 +457,8 @@ const Footer: React.FC = () => {
       )}
 
       {/* =====================================================
-          FOOTER ANIMATIONS
-      ===================================================== */}
+                FOOTER ANIMATIONS
+            ===================================================== */}
       <style>
         {`
           @keyframes fadeIn {
@@ -481,6 +476,6 @@ const Footer: React.FC = () => {
       </style>
     </>
   );
-};
+}
 
 export default Footer;
