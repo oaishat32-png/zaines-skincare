@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 import All from "../assets/All.jpeg";
-import one from "../assets/one.jpeg";
+import oil from "../assets/oil.jpeg";
 import image from "../assets/image.png";
 
 interface HeroSlide {
@@ -49,7 +49,7 @@ const slides: HeroSlide[] = [
   },
 
   {
-    image: one,
+    image: oil,
     kicker: "Your Daily Skincare Ritual",
     title: (
       <>
