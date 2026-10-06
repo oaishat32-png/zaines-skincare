@@ -14,7 +14,7 @@ const CartPage: React.FC = () => {
   const total = subtotal + (items.length > 0 ? DELIVERY_FEE : 0);
 
   return (
-    <main className="min-h-screen bg-pink-50 px-4 pb-28 pt-6 sm:px-6">
+    <main className="min-h-screen bg-yellow-50 px-4 pb-8 pt-28 sm:px-6 sm:pt-32">
       <div className="mx-auto max-w-md rounded-3xl bg-white p-6 shadow-sm">
 
         {/* Header */}
@@ -29,7 +29,7 @@ const CartPage: React.FC = () => {
           {items.length > 0 && (
             <button
               onClick={clearCart}
-              className="flex items-center gap-1 text-sm text-gray-400 hover:text-red-500"
+              className="flex items-center gap-1 text-sm text-gray-400 hover:text-yellow-500"
             >
               <Trash2 className="h-4 w-4" /> Clear all
             </button>
@@ -44,7 +44,7 @@ const CartPage: React.FC = () => {
           {items.length === 0 && (
             <p className="py-12 text-center text-sm text-gray-400">
               Your cart is empty.{" "}
-              <Link to="/menu" className="font-semibold text-pink-600">
+              <Link to="/menu" className="font-semibold text-yellow-600">
                 Browse the menu
               </Link>
             </p>
@@ -65,7 +65,7 @@ const CartPage: React.FC = () => {
                   {item.name}
                 </h3>
                 <p className="text-xs text-gray-400">Freshly prepared daily</p>
-                <p className="mt-1 text-sm font-semibold text-pink-600">
+                <p className="mt-1 text-sm font-semibold text-yellow-600">
                   {formatNaira(item.price)}
                 </p>
               </div>
@@ -89,7 +89,7 @@ const CartPage: React.FC = () => {
               <button
                 onClick={() => removeItem(item.id)}
                 aria-label={`Remove ${item.name}`}
-                className="text-gray-300 hover:text-red-500"
+                className="text-gray-300 hover:text-yellow-500"
               >
                 <Trash2 className="h-4 w-4" />
               </button>
@@ -111,7 +111,7 @@ const CartPage: React.FC = () => {
               </div>
               <div className="mt-2 flex justify-between border-t border-gray-200 pt-2">
                 <span className="font-bold text-gray-900">Total</span>
-                <span className="font-bold text-pink-600">
+                <span className="font-bold text-yellow-600">
                   {formatNaira(total)}
                 </span>
               </div>
@@ -119,7 +119,7 @@ const CartPage: React.FC = () => {
 
             <Link
               to="/checkout"
-              className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-pink-600 py-4 text-sm font-semibold text-white transition hover:bg-pink-700"
+              className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-yellow-600 py-4 text-sm font-semibold text-white transition hover:bg-yellow-700"
             >
               Proceed to Checkout →
             </Link>
@@ -137,10 +137,10 @@ const CartPage: React.FC = () => {
           <BookOpen className="h-5 w-5" />
           <span className="text-xs">Menu</span>
         </Link>
-        <Link to="/cart" className="relative flex flex-col items-center gap-1 text-pink-600">
+        <Link to="/cart" className="relative flex flex-col items-center gap-1 text-yellow-600">
           <ShoppingCart className="h-5 w-5" />
           {totalCount > 0 && (
-            <span className="absolute -top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-pink-600 text-[10px] text-white">
+            <span className="absolute -top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-yellow-600 text-[10px] text-white">
               {totalCount}
             </span>
           )}

@@ -87,7 +87,7 @@ const CartDrawer: React.FC = () => {
                     <button
                       onClick={() => removeItem(itemId)}
                       aria-label={`Remove ${item.name}`}
-                      className="self-start text-red-400 hover:text-red-600"
+                      className="self-start text-yellow-400 hover:text-yellow-600"
                     >
                       <X className="h-5 w-5" />
                     </button>

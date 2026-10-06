@@ -7,7 +7,7 @@ import New from "../assets/New.jpeg";
 
 const NAV_ITEMS = [
   { label: "Home", path: "/" },
-  { label: "About us", path: "/#about" },
+  { label: "About us", path: "/#about-us" },
   { label: "Products", path: "/products" },
   { label: "Contact", path: "/contact" },
 ];

@@ -117,7 +117,7 @@ const CheckoutPage: React.FC = () => {
   }
 
   return (
-    <main className="min-h-screen bg-yellow-50 px-4 py-8 sm:px-6">
+    <main className="min-h-screen bg-yellow-50 px-4 pb-8 pt-28 sm:px-6 sm:pt-32">
       <div className="mx-auto max-w-md rounded-3xl bg-white p-6 shadow-sm">
 
         {/* Header */}

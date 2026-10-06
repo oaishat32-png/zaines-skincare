@@ -5,7 +5,7 @@ import CEO from "../assets/CEO.jpeg";
 const AboutStory: React.FC = () => {
   return (
     <section
-    id="our-story"
+    id="about-us"
      className="relative w-full overflow-hidden border-t border-[#eee5d4] bg-[#FFF9EE] px-6 py-16 md:px-12 lg:px-16 lg:py-24">
       {/* Ambient gold glow */}
       <div className="pointer-events-none absolute -left-28 top-10 h-80 w-80 rounded-full bg-[#EAA900]/10 blur-[120px]" />

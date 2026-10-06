@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -28,22 +28,21 @@ function Home() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <CartProvider>
-        <Navbar />
-        <CartDrawer />
+    <CartProvider>
+      <Navbar />
+      <CartDrawer />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/checkout" element={<CheckoutPage />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/about-us" element={<AboutStory />} />
+      </Routes>
 
-        <Footer />
-      </CartProvider>
-    </BrowserRouter>
+      <Footer />
+    </CartProvider>
   );
 }
 
